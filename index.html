@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/utilities.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TaskFlow Lite</h1>
+            <p>Your client-side task management solution</p>
+        </header>
+
+        <main>
+            <form id="task-form" class="task-form">
+                <input type="text" id="task-input" placeholder="Add a new task..." maxlength="100" aria-label="New task input">
+                <button type="submit" id="add-btn">Add Task</button>
+                <div id="error-message" class="error-message" role="alert" aria-live="polite"></div>
+            </form>
+
+            <div class="filters">
+                <button id="filter-all" class="filter-btn active">All</button>
+                <button id="filter-active" class="filter-btn">Active</button>
+                <button id="filter-completed" class="filter-btn">Completed</button>
+            </div>
+            <div class="bulk-actions">
+                <button id="undo-btn" class="bulk-btn" disabled>Undo</button>
+                <button id="redo-btn" class="bulk-btn" disabled>Redo</button>
+                <button id="mark-all-complete" class="bulk-btn">Mark All Complete</button>
+                <button id="mark-all-incomplete" class="bulk-btn">Mark All Incomplete</button>
+                <button id="clear-completed" class="bulk-btn">Clear Completed</button>
+            </div>
+
+            <div id="task-counter" class="task-counter"></div>
+
+            <ul id="task-list" class="task-list" role="list"></ul>
+
+            <div id="empty-state" class="empty-state">
+                <p>No tasks yet. Add one above to get started!</p>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
